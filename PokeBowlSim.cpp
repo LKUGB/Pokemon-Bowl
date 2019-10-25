@@ -2,7 +2,6 @@
 #include <vector>
 #include <fstream>
 #include <sstream>
-#include "Pokemon.h"
 #include "PokeBowl.h"
 
 using namespace std;
@@ -30,7 +29,8 @@ int main() {
     getline(inFS, line);
     // read in each line until end of file
 
-    vector<Pokemon> pokeVector;
+    vector<Pokemon> pokeVector; //define the object vector
+
     while (getline(inFS, line)) {
         istringstream pokemon(line);
         string substring;
@@ -107,10 +107,13 @@ int main() {
     }
 
     //claim who finally win the bowl
-    if(pokeWin == 1){
-        cout << pokeVector.at(k).getName() << "won!"; //the last round of game: the second pokemon won
+    if(pokeWin == 0){
+        cout << pokeVector.at(k).getName() << " and " << pokeVector.at(j).getName() << " ends up in a draw." << endl;
+    }
+    else if(pokeWin == 1){
+        cout << pokeVector.at(k).getName() << " won!" << endl; //the last round of game: the second pokemon won
     }
     else{
-        cout << pokeVector.at(j).getName() << "won!"; //the last round of game: the first pokemon won
+        cout << pokeVector.at(j).getName() << " won the bowl!" << endl; //the last round of game: the first pokemon won
     }
 }

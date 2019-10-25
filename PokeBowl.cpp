@@ -3,7 +3,6 @@
 //
 
 #include "PokeBowl.h"
-#include "Pokemon.h"
 #include <iostream>
 
 //declare a member function named Bowl and will determine which pokemon wins
